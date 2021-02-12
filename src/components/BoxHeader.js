@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 
-function Header({ header, onWordEnd }) {
+function BoxHeader({ header, onWordEnd }) {
   const [letter, setLetter] = useState("");
 
-  const wordLength = header.split("").length;
+  useEffect(() => {
+    const headerLength = header.split("").length;
 
-  const letterCycler = () => {
     header.split("").forEach((letter, i) => {
       setTimeout(() => {
         setLetter((prevState) => (prevState += letter));
-        if (wordLength - 1 === i) {
+        if (headerLength - 1 === i) {
           setTimeout(() => {
             onWordEnd();
             setLetter("");
@@ -17,16 +17,14 @@ function Header({ header, onWordEnd }) {
         }
       }, i * 500);
     });
-  };
 
-  useEffect(() => {
-    letterCycler();
     return function cleanup() {
       setLetter("");
     };
-  }, [header]); // eslint-disable-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [header]);
 
   return <h5>{letter}</h5>;
 }
 
-export default Header;
+export default BoxHeader;

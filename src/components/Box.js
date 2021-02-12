@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import animalList from "../animal.json";
-import Header from "./Header";
+import BoxHeader from "./BoxHeader";
 
 function Box() {
   const [color, setColor] = useState("");
@@ -39,11 +39,12 @@ function Box() {
       setColor("");
       setTitle("");
     };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="box" style={{ backgroundColor: color }}>
-      <Header header={title} onWordEnd={handleWordEnd} />
+      <BoxHeader header={title} onWordEnd={handleWordEnd} />
     </div>
   );
 }
