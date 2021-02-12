@@ -5,7 +5,17 @@ import Header from "./Header";
 function Box() {
   const [color, setColor] = useState("");
   const [title, setTitle] = useState("");
-  const colors = ["#9966CC", "#FAA08E", "#66CC66", "#207C9D", "#d8d341"];
+  const colors = [
+    "#9966CC",
+    "#FAA08E",
+    "#66CC66",
+    "#207C9D",
+    "#d8d341",
+    "#CCCCFF",
+    "#C19A6B",
+    "#6082B6",
+    "#C9CC3F",
+  ];
 
   const getColor = () => {
     const i = Math.floor(Math.random() * colors.length);
@@ -20,7 +30,7 @@ function Box() {
   const handleWordEnd = () => {
     getColor();
     getTitle();
-  }
+  };
 
   useEffect(() => {
     getColor();
@@ -33,7 +43,7 @@ function Box() {
 
   return (
     <div className="box" style={{ backgroundColor: color }}>
-      <Header header={title} onWordEnd={handleWordEnd}/>
+      <Header header={title} onWordEnd={handleWordEnd} />
     </div>
   );
 }
