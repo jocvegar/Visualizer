@@ -21,9 +21,12 @@ function Header({ header, onWordEnd }) {
 
   useEffect(() => {
     letterCycler();
-  }, [header]);
+    return function cleanup() {
+      setLetter("");
+    };
+  }, [header]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  return <h4>{letter}</h4>;
+  return <h5>{letter}</h5>;
 }
 
 export default Header;

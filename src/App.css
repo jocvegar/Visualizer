@@ -5,13 +5,13 @@
 
 .App-header {
   background-color: #282c34;
-  font-size: calc(5px + 2vmin);
+  font-size: calc(10px + 2vmin);
   color: white;
 }
 
 #container {
   display: grid;
-  grid-gap: 15px;
+  grid-gap: 0px;
   min-width: 100vw;
   min-height: 100vh;
 }
@@ -19,4 +19,40 @@
 .box {
   color: #fff;
   padding: 5px;
+}
+
+.selectBox {
+  padding: 0.5em 0 1em 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: baseline;
+  align-content: stretch;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;
+}
+.select {
+  width: 15em;
+  height: 3em;
+  line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: 0.25em;
+}
+select {
+  flex: 1;
+  padding: 0 0.5em;
+  color: #fff;
+  cursor: pointer;
 }

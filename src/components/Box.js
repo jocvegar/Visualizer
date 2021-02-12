@@ -25,7 +25,11 @@ function Box() {
   useEffect(() => {
     getColor();
     getTitle();
-  }, []);
+    return function cleanup() {
+      setColor("");
+      setTitle("");
+    };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="box" style={{ backgroundColor: color }}>
