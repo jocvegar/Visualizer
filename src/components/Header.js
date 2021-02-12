@@ -23,11 +23,7 @@ function Header({ header, onWordEnd }) {
     letterCycler();
   }, [header]);
 
-  return (
-    <>
-      <h4>{letter}</h4>
-    </>
-  );
+  return <h4>{letter}</h4>;
 }
 
 export default Header;
