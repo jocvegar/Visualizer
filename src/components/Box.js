@@ -23,7 +23,7 @@ function Box() {
   };
 
   const getTitle = () => {
-    const i = Math.floor(Math.random() * animalList.length);
+    const i = Math.floor(Math.random() * (animalList.length - 1));
     setTitle(animalList[i]);
   };
 
