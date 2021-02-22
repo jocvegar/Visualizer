@@ -18,7 +18,7 @@ function Box() {
   ];
 
   const getColor = () => {
-    const i = Math.floor(Math.random() * colors.length);
+    const i = Math.ceil(Math.random() * colors.length);
     setColor(colors[i]);
   };
 
